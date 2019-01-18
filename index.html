@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/eosjs@16.0.8/lib/eos.min.js" integrity="sha512-zhPSKFEBlDVvUzjl9aBS66cI8tDYoLetynuKvIekHT8NZZ12oxwcZ//M/eT/2Rb/pR/cjFvLD8104Cy//sdEnA=="
+        crossorigin=" anonymous"></script>
+</head>
+
+<body>
+    <div class="main" style="text-align:center;margin:30px">
+        <h1>BOS 糖果一键领取</h1>
+        <div class="is-login" style="margin:10px" hidden>
+            账户名:<input type="text" class="account-name" disabled>
+            <button type="button" class="info_btn">详情</button>
+            <button type="button" class="logout_btn">退出</button>
+        </div>
+        <div class="login-area" style="margin:10px">
+            <button type="button" class="login_btn">登录</button>
+        </div>
+        <div class="candy-area" style="margin:10px">
+            <h2>糖果</h2>
+            <div style="margin:5px">
+                <button type="button" class="claim">所有糖果</button>
+            </div>
+            <div style="margin:5px">
+                <button type="button" class="claim">BOS Jacks</button>
+            </div>
+            <div style="margin:5px">
+                <button type="button" class="claim">Mix System</button>
+            </div>
+        </div>
+        <div class="tx-area" style="margin:10px" hidden>
+            交易id:<a href="" target="_blank" class="tx-id"></a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="js/app.min.js"></script>
