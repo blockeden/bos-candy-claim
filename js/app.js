@@ -80,14 +80,14 @@ $(".login_btn").on("click", function () {
         console.log(user);
         $(".account-name").val(user.name);
         $(".is-login").show();
-        $(".login_btn").hide();
+        $(".login-area").hide();
     });
 })
 
 // 退出登录
 $(".logout_btn").on("click", function () {
     account = undefined;
-    $(".login_btn").show();
+    $(".login-area").show();
     $(".is-login").hide();
 
     window["scatter"].forgetIdentity().then(() => { })
