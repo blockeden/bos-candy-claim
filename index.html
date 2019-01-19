@@ -8,31 +8,33 @@
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
 
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+
 </head>
 
 <body>
     <div class="main" style="text-align:center;margin:30px">
         <h1>BOS 糖果一键领取</h1>
         <div class="is-login" style="margin:10px" hidden>
-            账户名:<input type="text" class="account-name" disabled>
-            <button type="button" class="info_btn">详情</button>
-            <button type="button" class="logout_btn">退出</button>
+            账户名:<input type="text" class="account-name" disabled/>
+            <button type="button" class="info_btn weui-btn weui-btn_mini weui-btn_default">详情</button>
+            <button type="button" class="logout_btn weui-btn weui-btn_mini weui-btn_warn">退出</button>
         </div>
         <div class="login-area" style="margin:10px">
-            <button type="button" class="login_btn">登录</button>
+            <button type="button" class="login_btn weui-btn weui-btn_mini weui-btn_primary">登录</button>
             </br></br>
             <a href="https://github.com/blockeden/Articles/blob/master/join-bos-scatter-zh.md" target="_blank">scatter配置教程</a>
         </div>
         <div class="candy-area" style="margin:10px">
             <h2>糖果</h2>
             <div style="margin:5px">
-                <button type="button" class="claim">所有糖果</button>
+                <button type="button" class="claim weui-btn weui-btn_mini weui-btn_primary">所有糖果</button>
             </div>
             <div style="margin:5px">
-                <button type="button" class="claim">BOS Jacks</button>
+                <button type="button" class="claim weui-btn weui-btn_mini weui-btn_default">BOS Jacks</button>
             </div>
             <div style="margin:5px">
-                <button type="button" class="claim">Mix System</button>
+                <button type="button" class="claim weui-btn weui-btn_mini weui-btn_default">Mix System</button>
             </div>
         </div>
         <div class="tx-area" style="margin:10px" hidden>
@@ -46,3 +48,4 @@
 </html>
 
 <script src="js/app.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>

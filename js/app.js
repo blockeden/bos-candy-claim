@@ -37,7 +37,7 @@ function getScatterUser() {
                 return Promise.reject(err);
             });
     } else {
-        alert("Scatter not loaded!");
+        weui.toast("Scatter not loaded!");
         return Promise.reject("Scatter not loaded!");
     }
 };
@@ -101,6 +101,9 @@ $(".claim").on("click", function () {
     if (account) {
         console.log($(this).text());
         let eos = window.scatter.eos(network, Eos, eosOptions, "https");
+        var loading = weui.loading('生成交易', {
+            className: 'custom-classname'
+        });
         let actions = [];
         switch ($(this).text()) {
             case "BOS Jacks":
@@ -121,15 +124,27 @@ $(".claim").on("click", function () {
         console.log(actions);
         /* eos.transfer(account.name, "eosio", "0.0001 BOS", "test").then(res => { */
         eos.transaction({ "actions": actions }, options).then(res => {
-            alert("成功");
+            loading.hide();
+            weui.toast("成功", 3000);
             console.log(res.transaction_id);
             $(".tx-area").show();
             $(".tx-id").text(res.transaction_id);
             $(".tx-id").attr("href", "https://bos.eosx.io/tx/" + res.transaction_id);
         }).catch(err => {
-            alert(JSON.stringify(err));
+            loading.hide();
+            $(".tx-area").hide();
+            let errString;
+            console.log(typeof (err));
+            if (typeof (err) == "object") {
+                errString = JSON.stringify(err);
+            } else {
+                errString = err;
+            }
+            errString = "失败\n" + errString;
+            console.log(errString);
+            weui.alert(errString);
         })
     } else {
-        alert("请登录!");
+        weui.topTips("请登录!", 3000);
     }
 });
