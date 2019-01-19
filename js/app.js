@@ -117,15 +117,15 @@ $(".claim").on("click", function () {
                 actions.push(getMixData());
                 break;
         }
-        options = {
+        /* options = {
             broadcast: true,
             sign: true
-        }
+        } */
         console.log(actions);
         /* eos.transfer(account.name, "eosio", "0.0001 BOS", "test").then(res => { */
-        eos.transaction({ "actions": actions }, options).then(res => {
+        eos.transaction({ "actions": actions }/* , options */).then(res => {
             loading.hide();
-            weui.toast("成功", 3000);
+            weui.toast("成功", 2000);
             console.log(res.transaction_id);
             $(".tx-area").show();
             $(".tx-id").text(res.transaction_id);
@@ -145,6 +145,6 @@ $(".claim").on("click", function () {
             weui.alert(errString);
         })
     } else {
-        weui.topTips("请登录!", 3000);
+        weui.topTips("请登录!", 2000);
     }
 });
